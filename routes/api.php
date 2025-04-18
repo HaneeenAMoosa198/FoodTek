@@ -14,7 +14,7 @@ use App\Http\Controllers\Api\MenuController;
 use App\Http\Controllers\Api\NotificationController;
 use App\Http\Controllers\Api\OfferController;
 use App\Http\Controllers\Api\OrderController;
-use App\Http\Controllers\Api\OrderItemController;
+use App\Http\Controllers\Api\Order_itemController;
 use App\Http\Controllers\Api\PermissionController;
 use App\Http\Controllers\Api\RatedController;
 use App\Http\Controllers\Api\RoleController;
@@ -41,7 +41,7 @@ Route::post('/reset-password', [VerificationEmailController::class, 'resetPasswo
 
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::apiResource('users', UserController::class);
+    Route::apiResource('users',UserController::class);
     Route::apiResource('chats', ChatController::class);
     Route::apiResource('addresses', AddressController::class);
     Route::apiResource('calls', CallController::class);
@@ -52,7 +52,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('notifications', NotificationController::class);
     Route::apiResource('offers', OfferController::class);
     Route::apiResource('orders', OrderController::class);
-    Route::apiResource('order-items', OrderItemController::class);
+    Route::apiResource('order-items', Order_itemController::class);
     Route::apiResource('permissions', PermissionController::class);
     Route::apiResource('rateds', RatedController::class);
     Route::apiResource('roles', RoleController::class);

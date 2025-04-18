@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-
+public function index(){
+    return response()->json(User::all());
+}
     //use Response;
     public function register(request $request)
     {
@@ -78,10 +80,7 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
-    }
+    
 
     /**
      * Store a newly created resource in storage.

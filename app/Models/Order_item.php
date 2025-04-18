@@ -2,19 +2,19 @@
 
 namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-
 use Illuminate\Database\Eloquent\Model;
 
-class Rated extends Model {
+class Order_item extends Model {
+    Use HasFactory;
+    protected $table="order_items";
     protected $fillable = [
-        'user_id', 
+        'order_id', 
         'menu_id', 
-        'rating', 
-        'comment'
+        'quantity'
     ];
-    public function user() 
+    public function order() 
     { 
-        return $this->belongsTo(User::class); 
+        return $this->belongsTo(Order::class); 
     }
     public function menu() 
     { 

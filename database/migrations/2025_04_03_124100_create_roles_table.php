@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->string('name'); // مثل "Admin", "User", "Staff"
+            $table->string('name')->uniqe(); // مثل "Admin", "User", "Staff"
             $table->timestamps();
         });
     }
